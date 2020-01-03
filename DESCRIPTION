@@ -1,11 +1,19 @@
 Package: surfaceMetrics
-Type: Package
-Title: What the Package Does (Title Case)
+Type: Incomplete Package
+Title: Calculates surface metrics for raster layers
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Annalie Dorph
+Maintainer: Annalie Dorph <adorph92@gmail.com>
+Description: Employing gradient modelling techniques this code calculates 
+     different surface metrics using rasters clipped to an area or as a 
+     moving window analysis. The code for functions has been developed but
+     it is not updated/ written to be employed as a package.
+
+Imports: 
+    Rcpp (>= 1.0.1),
+    raster (>= 2.8-4)
+License: 
 Encoding: UTF-8
 LazyData: true
+LinkingTo: 
+    Rcpp, RcppArmadillo
