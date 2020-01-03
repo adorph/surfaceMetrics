@@ -45,13 +45,16 @@ moving_Sq <- function(landscape, moving_window, filename=''){
   newrast <- focal(landscape, moving_window, fun=function(x){
     MN <- nrow(moving_window) * ncol(moving_window) #Get the moving window dimensions
     vals <- as.matrix(x) #Convert it to a matrix
-    mu <- mean(vals) #Find the mean
+
     #Calculate the root mean square error
-    Sq <- sqrt(sum((vals - mu)^2, na.rm=T)/MN)
+    Sq <- sqrt(sum((vals - mean(vals, na.rm=T))^2, na.rm=T)/MN)
     return(Sq)
   })
+
+  frast <- crop(newrast, landscape)
+
   if (filename  != '') {
-    writeRaster(newrast, filename)
+    writeRaster(frast, filename, format="GTiff", overwrite=T)
   }
-  return(newrast)
+  return(frast)
 }
