@@ -51,7 +51,6 @@ moving_Sa <- function(landscape, moving_window, filename=''){
     Sa <- sum(abs(vals - mean(vals, na.rm=T)), na.rm=T)/MN # Calculate the surface roughness
 
     return(Sa)
-    remove
   })
 
   frast <- crop(newrast, landscape)
